@@ -25,14 +25,13 @@ def incorrect_user_response
   ask_only_readme
 end
 def approved_go_ahead
-  `git remove publicize_readme #incase readme currently exists.
-  git remote add publicize_readme "https://gitlab.com/$1/$2";
+  `git remote add publicize_readme "https://gitlab.com/$1/$2";
   git push publicize_readme master; `
 end
 def remove_temp_folder_temp_remote
-  `cd ..;
-  rm -rf publicize_readme;
-  git remove publicize_readme;`
+  `git remote rm publicize_readme;
+  cd ..;
+  rm -rf publicize_readme;`
 end
 def not_approved
   puts "program was not approved and program_ending, feel free to make changes.
@@ -46,3 +45,5 @@ end
 
 stage_everything
 prompt_user_with_question
+# may want to include logic ... if folder publicize_readme exists... dont add
+# just prompt and upon acceptance push.
