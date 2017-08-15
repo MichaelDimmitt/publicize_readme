@@ -3,11 +3,14 @@
 
 mkdir publicize_readme;
 cp Readme.md publicize_readme;
+# cp -rf public_folder publicize_readme;
+# cp -rf package.* publicize_readme;
 
 cd publicize_readme;
 git init;
 git add Readme.md; 
-# git add public_folder #package.*;
+# git add public_folder; 
+# git add package.*;
 
 
 git remote add publicize_readme "https://gitlab.com/general_organization/$1";
